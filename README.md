@@ -21,7 +21,7 @@ TODO:
 - [License](#License)
 
 ## Overview
-This repository contains the datasets and processing used in the paper [Exploiting Age of Information in Network Digital Twins for AI-driven Real-Time Link Blockage Detection](https://arxiv.org/abs/2505.15519). The dataset can be downloaded at the following [link-TBD](). Due to previous agreements between our partners, we are unable to provide the full deep learning model implementation and resulting model weights.
+This repository contains the datasets and processing used in the paper [Exploiting Age of Information in Network Digital Twins for AI-driven Real-Time Link Blockage Detection](https://arxiv.org/abs/2505.15519). The dataset can be downloaded at the following [link-TBD](). Due to previous agreements with our partners, we are unable to provide the full implementation of the deep learning model and the resulting model weights.
 
 ## Scenario
 ### Considered urban scenario
