@@ -25,3 +25,26 @@ Considering a right-handed orthogonal reference frame XYZ, the vehicle’s lengt
 
 ### Radio-Materials assignment
 Referring to the ITU Recommendation [ITU-R P.2040-3](https://www.itu.int/rec/R-REC-P.2040/en), for the buildings’ meshes, we consider the ITU Concrete material.
+
+Currently, the following radio materials have been considered for the vehicles' component meshes:
+- body -> perfect electric conductor (PEC);
+- glasses -> ITU glass;
+- lights -> ITU glass;
+- rims -> PEC;
+- wheels -> PEC.
+
+## Simulation Configuration
+
+### Tx/Rx Configuration
+The transmitter is a single base station with an isotropic radiation pattern positioned on the roof of the DEIB building.
+
+According to the simulation mode, the receivers are defined in the following ways:
+- for **grid simulations**, the static receivers are disposed on an orthogonal grid with given resolution and at a specific height;
+- for **vehicular simulations**, the receivers are positioned in the scenario according to the data provided by SUMO vehicular traffic simulation.
+
+### Reference Coordinate Systems
+We consider a global coordinate system (GCS) with a Cartesian standard basis x', y', z'. In the considered setting, x' is oriented east, y' is oriented towards north, and z' is outgoing from the ground plane. This system is centered approximately in the center of the considered area of interest. Height, represented by the z-coordinate, is intended with respect to the ground.
+`In the following, we will refer to the point coordinates in the scenario referred to the described GCS as local to distinguish them from the geographical coordinates (e.g., UTM or lon/lat) of the original map.`
+Considering an arbitrary unit norm vector v'=(x, y, z). The Direction of Arrival (DoA) and Direction of Departure (DoD) elevation $\theta$ and azimuth $\phi$ angles are determined as:
+$\theta=arccos(z)$
+$\phi=arctan(y, x)$
