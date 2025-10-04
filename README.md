@@ -172,12 +172,14 @@ Each dataset directory contains two subdirectories:
 ## ADCMP Dataset Generation
 
 ## Citation 
+```
 @article{DT_AoI_classification,
   title={{Exploiting Age of Information in Network Digital Twins for AI-driven Real-Time Link Blockage Detection}},
   author={Michele Zhu and Francesco Linsalata and Silvia Mura and Lorenzo Cazzella and Damiano Badini and Umberto Spagnolini},
   year={2025},
   journal={arXiv:}, 
 }
+```
 ## Acknowledgement
 
 ## License
