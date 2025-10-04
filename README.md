@@ -224,7 +224,7 @@ def __getitem__(self, idx: int):
   target = self.targets[idx]
   return adcpm, target
 ```
-Due to storage restrictions we choose to simulate the awgn noise on the fly over the MIMO-OFDM matrix instead of creating datasets at different noise levels. It is advised to see the seeds for reproducibility due to the random components.
+Due to storage restrictions we choose to simulate the awgn noise on the fly over the MIMO-OFDM matrix instead of creating datasets at different noise levels. It is advised to set the seeds for reproducibility due to the random components.
 
 The implementation of the processing from MIMO-OFDM matrix to ADCPM matrix is implemented under `class ADCMP_Manager` in the file `communication_channel_utility.py`
 
