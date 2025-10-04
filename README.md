@@ -4,8 +4,11 @@
 ### This Repository is under contruction
 This repository contains the processing used in the paper "Exploiting Age of Information in Network Digital Twins for AI-driven Real-Time Link Blockage Detection". The dataset can be downloaded at the following [link TBD]()
 
-### Contents
+## Release
+
+## Contents
 - [Release](#Release)
+- [Contents](#Contents)
 - [Overview](#Overview)
 - [Scenario](#Scenario)
 - [Simulation Configuration](#Simulation-Configuration)
@@ -14,8 +17,6 @@ This repository contains the processing used in the paper "Exploiting Age of Inf
 - [Citation](#Citation)
 - [Acknowledgement](#Acknowledgement)
 - [License](#License)
-
-## Release
 
 ## Overview
 
