@@ -3,8 +3,6 @@
 import sys
 import os
 from pathlib import Path
-
-sys.path.append(os.getcwd())
 # Third party imports
 import numpy as np
 import pandas as pd
