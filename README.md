@@ -33,7 +33,7 @@ Currently, the following radio materials have been considered for the vehicles' 
 - rims -> PEC;
 - wheels -> PEC.
 
-## Simulation-Configuration
+## Simulation Configuration
 
 ### Tx/Rx Configuration
 The transmitter is a single base station with an isotropic radiation pattern positioned on the roof of the DEIB building.
