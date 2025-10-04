@@ -239,7 +239,9 @@ The implementation of the processing from MIMO-OFDM matrix to ADCPM matrix is im
 ```
 
 ## Acknowledgement
-We thank [Laboratorio di simulazione urbana Fausto Curti](https://www.labsimurb.polimi.it/) for providing the digital map. We thank the authors of [SUMO](https://eclipse.dev/sumo/), [Sionna](https://nvlabs.github.io/sionna/), [CARLA](https://carla.org/) for their work.
+We thank [Laboratorio di simulazione urbana Fausto Curti](https://www.labsimurb.polimi.it/) for providing the digital map. 
+We thank the authors of [SUMO](https://eclipse.dev/sumo/), [Sionna](https://nvlabs.github.io/sionna/), [CARLA](https://carla.org/) for their work.
+
 ## License
 [![Data License](https://img.shields.io/badge/Data%20License-CC%20By%20NC%204.0-red)](DATA_LICENSE)
 [![Code License](https://img.shields.io/badge/Code%20License-Apache_2.0-yellow.svg)](LICENSE)
