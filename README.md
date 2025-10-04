@@ -183,4 +183,4 @@ Attach files by dragging & dropping, selecting or pasting them.
 [![Data License](https://img.shields.io/badge/Data%20License-CC%20By%20NC%204.0-red)](DATA_LICENSE)
 [![Code License](https://img.shields.io/badge/Code%20License-Apache_2.0-yellow.svg)](LICENSE)
 
-The data are licensed under CC BY-NC 4.0 for non-commercial use. The codebase is licensed under Apache 2.0. Users must comply with all terms and conditions of these original licenses.
+The data are licensed under CC BY-NC 4.0 for non-commercial use. The codebase is licensed under Apache 2.0. Users must comply with all terms and conditions of these original licenses. The content produced by the usage of this codebase may be affected by uncontrollable variables such as randomness, and therefore, the accuracy of the output cannot be guaranteeed by this project. This project does not accept any legal liability, nor does it assume responsibility for any losses incurred due to the use of associated resources and output results.
