@@ -3,10 +3,20 @@
 This repository contains the processing used in the paper "Exploiting Age of Information in Network Digital Twins for AI-driven Real-Time Link Blockage Detection". The dataset can be downloaded at the following [link TBD]()
 
 ### Contents
+- [Release](#Release)
+- [Overview](#Overview)
 - [Scenario](#Scenario)
 - [Simulation Configuration](#Simulation-Configuration)
 - [Simulation Parameters](#Simulation-Parameters)
 - [ADCMP Dataset Generation](#ADCMP-Dataset-Generation)
+- [Citation](#Citation)
+- [Acknowledgement](#Acknowledgement)
+- [License](#License)
+
+## Release
+
+## Overview
+
 ## Scenario
 ### Considered urban scenario
 The reference simulation scenario is the urban environment surrounding the Department of Electronics, Information and Bioengineering (DEIB) of Politecnico di Milano. A detailed 2.5D representation of the scenario has been provided by the *Laboratorio di simulazione urbana Fausto Curti* of the Department of Architecture and Urban Studies of Politecnico di Milano. The considered area of interest is represented in the "map_image.png" file.
@@ -157,3 +167,12 @@ Each dataset directory contains two subdirectories:
 - Column 16 - SUMO Lane index
 
 ## ADCMP Dataset Generation
+
+## Citation 
+
+## Acknowledgement
+
+## License
+[![Data License](https://img.shields.io/badge/Weight%20License-CC%20By%20NC%204.0-red)](WEIGHT_LICENSE)
+[![Code License](https://img.shields.io/badge/Code%20License-Apache_2.0-yellow.svg)](LICENSE)
+The data are licensed under CC BY-NC 4.0 for non-commercial use. The codebase is licensed under Apache 2.0. Users must comply with all terms and conditions of these original licenses.
