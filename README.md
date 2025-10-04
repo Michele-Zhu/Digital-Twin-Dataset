@@ -25,6 +25,8 @@ This repository contains the datasets and processing used in the paper [Exploiti
 
 After the download move the folder `data` to the root of project repository, the rest of the instructions are at section [ADCMP Dataset Generation](#ADCMP-Dataset-Generation).
 
+The codebase is based on Python version 3.10.12.
+
 ## Scenario
 ### Considered urban scenario
 The reference simulation scenario is the urban environment surrounding the Department of Electronics, Information and Bioengineering (DEIB) of Politecnico di Milano. A detailed 2.5D representation of the scenario has been provided by the *Laboratorio di simulazione urbana Fausto Curti* of the Department of Architecture and Urban Studies of Politecnico di Milano. The considered area of interest is represented in the "map_image.png" file.
