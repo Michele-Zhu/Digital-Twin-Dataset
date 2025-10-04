@@ -2,10 +2,12 @@
 <a href='https://arxiv.org/abs/2505.15519'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a> 
 
 ### This Repository is under contruction
-This repository contains the processing used in the paper "Exploiting Age of Information in Network Digital Twins for AI-driven Real-Time Link Blockage Detection". The dataset can be downloaded at the following [link TBD]()
+TODO:
+- add the sizes of the resulting matrix
+- Publish the repo
 
 ## Release
-- [xx/10/2025] Initial release of the data and processing code.
+- [xx/10/2025] Initial release.
 ## Contents
 - [Release](#Release)
 - [Contents](#Contents)
@@ -19,6 +21,7 @@ This repository contains the processing used in the paper "Exploiting Age of Inf
 - [License](#License)
 
 ## Overview
+This repository contains the datasets and processing used in the paper [Exploiting Age of Information in Network Digital Twins for AI-driven Real-Time Link Blockage Detection](https://arxiv.org/abs/2505.15519). The dataset can be downloaded at the following [link-TBD](). Due to previous agreements between our partners, we are unable to provide the full deep learning model implementation and resulting model weights.
 
 ## Scenario
 ### Considered urban scenario
@@ -47,7 +50,6 @@ Currently, the following radio materials have been considered for the vehicles' 
 - wheels -> PEC.
 
 ## Simulation Configuration
-
 ### Tx/Rx Configuration
 The transmitter is a single base station with an isotropic radiation pattern positioned on the roof of the DEIB building.
 
@@ -84,6 +86,7 @@ To simulate the mmWave wireless channel in Sionna, the following parameters are 
 For each vehicle type, we consider the following SUMO simulation parameters:
 - **vehicles per minute**: density of vehicles in the simulation, where the density is defined as the average number of vehicles per minute per lane km;
 - **fringe factor**: the higher its value, the more likely vehicles are to be generated at the network fringe w.r.t. inner nodes; we set this value to 1E10, in order to generate vehicles only at the network fringe and, therefore, to prevent discontinuities in the SUMO simulation (e.g., vehicles abruptly appearing at inner nodes).
+
 ### Dataset Generation
 In this section, we provide the details related to the structure of the generated vehicular traffic and
 ray tracing datasets as well as on the directory structure used to save them during simulation.
@@ -169,7 +172,59 @@ Each dataset directory contains two subdirectories:
 - Column 15 - SUMO Road ID
 - Column 16 - SUMO Lane index
 
-## ADCMP Dataset Generation
+## MIMO-OFDM Dataset Generation
+To generate the MIMO-OFDM dataset or vehicular use the following command:
+```
+python src/create_dataset_grid.py
+python src/create_dataset_vehicular.py
+# Warning: The dataset generated will be large TODO: get the space required
+```
+The following parameters can be turned inside their respective source code:
+- N, number of columns along antenna array;
+- M, number of rows along antenna array;
+- B, bandwidth;
+- Nc, number of subcarriers in the matrix;
+- f0, center frequency, please use the one set during simulation;
+- data_path, path to ray_tracing dataset folder;
+- output_path, path to adcpm output data folder.
+
+### Format Description
+The data is saved into numpy arrays where the files:
+- `channel_data.npy`, contains the MIMO-OFDM channel matrix;
+- `blockage_flags.npy`, contains the boolean blockage flag;
+- `positions.npy`, contains the vehicular position if present;
+- `log.txt`, contains the generated files metadatada such as, filename, datatype and array shape.
+
+### Reading the Data
+The data can be read using `np.memmap`:
+```
+channel_matrix_data = np.memmap(path, dtype=np.complex128, mode='r', shape=data_shape)
+blockage_condition = np.memmap(path, dtype=bool, mode='r', shape=data_shape)
+positions = np.memmap(path, dtype=np.float32, mode='r', shape=data_shape)
+```
+The format is compatibile with pytorch `Dataset` class, an implementation of the `__getitem__` dunder method will load the data one-by-one during the training.
+```
+# Pseudo-code example of CustomDataset()
+class CustomDataset
+def __init__(self, ...):
+  ...
+  self.add_noise_flag = add_noise_flag
+  self.snr_db = snr_db
+  self.channel_matrix_data = np.memmap(...)
+  self.targets = np.memmap(...)
+
+def __getitem__(self, idx: int):
+  channel_matrix = self.channel_matrix_data[idx]
+  if self.add_noise_flag:
+    channel_matrix = simulate_awgn()
+  # transform the channel matrix to ADCPM
+  adcpm = compute_adcpm(channel_matrix)
+  target = self.targets[idx]
+  return adcpm, target
+```
+Due to storage restrictions we choose to simulate the awgn noise on the fly over the MIMO-OFDM matrix instead of creating datasets at different noise levels. It is advised to see the seeds for reproducibility due to the random components.
+
+The implementation of the processing from MIMO-OFDM matrix to ADCPM matrix is implemented under `class ADCMP_Manager` in the file `communication_channel_utility.py`
 
 ## Citation 
 ```
@@ -180,6 +235,7 @@ Each dataset directory contains two subdirectories:
   journal={arXiv:}, 
 }
 ```
+
 ## Acknowledgement
 We thank [Laboratorio di simulazione urbana Fausto Curti](https://www.labsimurb.polimi.it/) for providing the digital map. We thank the authors of [SUMO](https://eclipse.dev/sumo/), [Sionna](https://nvlabs.github.io/sionna/), [CARLA](https://carla.org/) for their work.
 ## License

@@ -16,7 +16,6 @@ from util.communication_channel_utility import compute_channel_matrix, compute_a
 from util.MemmapManager import MemmapManager
 
 def main():
-    
     # parameters
     N=8  # N = columns
     M=16  # M = rows
