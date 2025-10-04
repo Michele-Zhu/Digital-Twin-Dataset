@@ -175,4 +175,5 @@ Each dataset directory contains two subdirectories:
 ## License
 [![Data License](https://img.shields.io/badge/Weight%20License-CC%20By%20NC%204.0-red)](WEIGHT_LICENSE)
 [![Code License](https://img.shields.io/badge/Code%20License-Apache_2.0-yellow.svg)](LICENSE)
+
 The data are licensed under CC BY-NC 4.0 for non-commercial use. The codebase is licensed under Apache 2.0. Users must comply with all terms and conditions of these original licenses.
