@@ -5,7 +5,6 @@
 TODO:
 - add the sizes of the resulting matrix
 - Publish the repo
-- Upload the data to external link
 
 ## Release
 - [xx/10/2025] Initial release.
@@ -23,6 +22,8 @@ TODO:
 
 ## Overview
 This repository contains the datasets and processing used in the paper [Exploiting Age of Information in Network Digital Twins for AI-driven Real-Time Link Blockage Detection](https://arxiv.org/abs/2505.15519). The dataset can be downloaded at the following [link](https://drive.google.com/file/d/1XQVwNTf5P8J0O3DxED9SEVFWO36lbSMS/view?usp=sharing). Due to previous agreements with our partners, we are unable to provide the full implementation of the deep learning model and the resulting model weights. Only the data relevant to the paper has been published.
+
+After the download move the folder `data` to the root of project repository, the rest of the instructions are at section [ADCMP Dataset Generation](#ADCMP-Dataset-Generation).
 
 ## Scenario
 ### Considered urban scenario
