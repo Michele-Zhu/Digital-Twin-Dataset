@@ -109,3 +109,49 @@ The `<sionna_parameterized_subdir>` has the following form:
 RT_s{sim_type}_c{carrier_frequency}_d{max_depth}_p{paths_num}_i{interaction_types}_l{paths_lim}
 E.g., “RT_sI2V_c2.8E+10_d5_p1.0E+06_iTTTT_l20”
 ```
+Each dataset directory contains two subdirectories:
+- `channel_dataset`, containing the channel data and simulation parameters information, where the `.pkl` version is serialized within a Pandas DataFrame as Pickle file:
+  - `channel_dataset.yml`, which contains the Sionna simulation parameters in YAML format;
+  - `channel_dataset.csv`, which contains the channel raytracing data generated using Sionna in CSV format;
+  - `bs_position.csv`, which contains the base station position in CSV format;
+- `vehicular_traffic`, containing a copy of the SUMO vehicular traffic simulation data; in particular, it contains the following files:
+ - `sumo_vehicular_traffic_dataset.csv`, contains the SUMO simulation data in CSV format.
+
+## Dataset Columns Descriptions
+### Channel Dataset
+- Column 1 - Time step
+- Column 2 - Transmitter type (only base station, for the considered I2V communication scenarios)
+- Column 3 - Transmitter ID
+- Column 4 - Receiver type (grid point or vehicle)
+- Column 5 - Receiver ID
+- Column 6 - Ray index (sequential identifier for a propagation path)
+- Column 7 - Interactions number (number of interactions of the path with the environment)
+- Column 8 - Received power [dBm]
+- Column 9 - Phase [degrees] (between -180° and 180°)
+- Column 10 - Delay [sec]
+- Column 11 - DoA azimuth [degrees] (between -180° and 180°)
+- Column 12 - DoA elevation [degrees] (between 0 and 180)
+- Column 13 - DoD azimuth [degrees] (between -180° and 180°)
+- Column 14 - DoD elevation [degrees] (between 0 and 180)
+- Column 15 - List of interaction types (0: LoS; 1 : Reflected; 2 : Diffracted; 3 : Scattered)
+- Column 16 - List of interactions' positions (x-coordinate [m], y-coordinate [m] and height [m])
+- Column 17 - List of interactions' velocities (x-coordinate [m/s], y-coordinate [m/s] and zcoordinate [m/s])
+- Column 18 - Blockage flag (true if the LoS path is not present for the point, false otherwise)
+
+### Vehicular Traffic Dataset
+- Column 1 - Time step (incremental integer; starting from 0)
+- Column 2 - Elapsed time in seconds (time step * simulation step duration)
+- Column 3 - Vehicle ID
+- Column 4 - Vehicle type
+- Column 5 - Longitude (w.r.t. the vehicle front bumper)
+- Column 6 - Latitude (w.r.t. the vehicle front bumper)
+- Column 7 - UTM x-coordinate (w.r.t. the vehicle front bumper)
+- Column 8 - UTM y-coordinate (w.r.t. the vehicle front bumper)
+- Column 9 - UTM zone
+- Column 10 - UTM character
+- Column 11 - Local x-coordinate (w.r.t. the vehicle front bumper)
+- Column 12 - Local y-coordinate (w.r.t. the vehicle front bumper)
+- Column 13 - Speed (m/s)
+- Column 14 - Vehicle heading (0-360 deg; 0° towards North; increasing clockwise)
+- Column 15 - SUMO Road ID
+- Column 16 - SUMO Lane index
