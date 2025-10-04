@@ -5,7 +5,7 @@
 This repository contains the processing used in the paper "Exploiting Age of Information in Network Digital Twins for AI-driven Real-Time Link Blockage Detection". The dataset can be downloaded at the following [link TBD]()
 
 ## Release
-
+- [xx/10/2025] Initial release of the data and processing code.
 ## Contents
 - [Release](#Release)
 - [Contents](#Contents)
@@ -181,7 +181,7 @@ Each dataset directory contains two subdirectories:
 }
 ```
 ## Acknowledgement
-
+We thank [Laboratorio di simulazione urbana Fausto Curti](https://www.labsimurb.polimi.it/) for providing the digital map. We thank the authors of [SUMO](https://eclipse.dev/sumo/), [Sionna](https://nvlabs.github.io/sionna/), [CARLA](https://carla.org/) for their work.
 ## License
 [![Data License](https://img.shields.io/badge/Data%20License-CC%20By%20NC%204.0-red)](DATA_LICENSE)
 [![Code License](https://img.shields.io/badge/Code%20License-Apache_2.0-yellow.svg)](LICENSE)
