@@ -160,6 +160,10 @@ Each dataset directory contains two subdirectories:
 - Column 6 - Latitude (w.r.t. the vehicle front bumper)
 - Column 7 - UTM x-coordinate (w.r.t. the vehicle front bumper)
 - Column 8 - UTM y-coordinate (w.r.t. the vehicle front bumper)
+Use Control + Shift + m to toggle the tab key moving focus. Alternatively, use esc then tab to move to the next interactive element on the page.
+No file chosen
+Attach files by dragging & dropping, selecting or pasting them.
+
 - Column 9 - UTM zone
 - Column 10 - UTM character
 - Column 11 - Local x-coordinate (w.r.t. the vehicle front bumper)
@@ -176,7 +180,7 @@ Each dataset directory contains two subdirectories:
 ## Acknowledgement
 
 ## License
-[![Data License](https://img.shields.io/badge/Weight%20License-CC%20By%20NC%204.0-red)](WEIGHT_LICENSE)
+[![Data License](https://img.shields.io/badge/Data%20License-CC%20By%20NC%204.0-red)](DATA_LICENSE)
 [![Code License](https://img.shields.io/badge/Code%20License-Apache_2.0-yellow.svg)](LICENSE)
 
 The data are licensed under CC BY-NC 4.0 for non-commercial use. The codebase is licensed under Apache 2.0. Users must comply with all terms and conditions of these original licenses.
