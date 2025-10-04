@@ -4,9 +4,9 @@ This repository contains the processing used in the paper "Exploiting Age of Inf
 
 ### Contents
 - [Scenario](#Scenario)
-- [Simulation Configuration](#Simulation Configuration)
-- [Simulation Parameters](#Simulation Parameters)
-- [ADCMP Dataset Generation](#ADCMP Dataset Generation)
+- [Simulation Configuration](#Simulation-Configuration)
+- [Simulation Parameters](#Simulation-Parameters)
+- [ADCMP Dataset Generation](#ADCMP-Dataset-Generation)
 ## Scenario
 ### Considered urban scenario
 The reference simulation scenario is the urban environment surrounding the Department of Electronics, Information and Bioengineering (DEIB) of Politecnico di Milano. A detailed 2.5D representation of the scenario has been provided by the *Laboratorio di simulazione urbana Fausto Curti* of the Department of Architecture and Urban Studies of Politecnico di Milano. The considered area of interest is represented in the "map_image.png" file.
@@ -33,7 +33,7 @@ Currently, the following radio materials have been considered for the vehicles' 
 - rims -> PEC;
 - wheels -> PEC.
 
-## Simulation Configuration
+## Simulation-Configuration
 
 ### Tx/Rx Configuration
 The transmitter is a single base station with an isotropic radiation pattern positioned on the roof of the DEIB building.
