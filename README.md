@@ -1,6 +1,5 @@
 # Digital-Twin-Dataset
-TODO: complete the references
-<a href='https://arxiv.org/abs/2405.05949'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a> 
+<a href='https://arxiv.org/abs/2505.15519'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a> 
 
 ### This Repository is under contruction
 This repository contains the processing used in the paper "Exploiting Age of Information in Network Digital Twins for AI-driven Real-Time Link Blockage Detection". The dataset can be downloaded at the following [link TBD]()
