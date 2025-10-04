@@ -57,7 +57,7 @@ where $arctan(y, x)$ is the two-argument inverse tangent function.
 ## Simulation Parameters
 ### NVIDIA Sionna Simulation Parameters
 To simulate the mmWave wireless channel in Sionna, the following parameters are considered:
-- **simulation type**Infrastructure to Vehicle (I2V) or Vehicle to Vehicle (V2V); for this project purposes, only I2V communication is considered;
+- **simulation type**: Infrastructure to Vehicle (I2V) or Vehicle to Vehicle (V2V); for this project purposes, only I2V communication is considered;
 - **simulation mode**: grid simulation, static vehicular simulation, dynamic vehicular simulation;
 - **carrier frequency**: carrier frequency used for simulation;
 - **max paths depth**: max paths depth in terms of number of interactions with the environment;
