@@ -3,7 +3,7 @@
 
 ### This Repository is under construction
 TODO:
-- add the sizes of the resulting matrix
+- add the sizes of the resulting dataset
 - Publish the repo
 
 ## Release
