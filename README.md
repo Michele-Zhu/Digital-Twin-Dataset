@@ -25,7 +25,7 @@ This repository contains the datasets and processing used in the paper [Exploiti
 
 After the download move the folder `data` to the root of project repository, the rest of the instructions are at section [ADCMP Dataset Generation](#ADCMP-Dataset-Generation).
 
-The codebase is based on Python version 3.10.12.
+The codebase has been developed with Python version 3.10.12.
 
 ## Scenario
 ### Considered urban scenario
