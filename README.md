@@ -1,13 +1,8 @@
 # Digital-Twin-Dataset
 <a href='https://arxiv.org/abs/2505.15519'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a> 
 
-### This Repository is under construction
-TODO:
-- add the sizes of the resulting dataset
-- Publish the repo
-
 ## Release
-- [xx/10/2025] Initial release.
+- [08/10/2025] Initial release.
 ## Contents
 - [Release](#Release)
 - [Contents](#Contents)
@@ -179,9 +174,8 @@ Each dataset directory contains two subdirectories:
 ## MIMO-OFDM Dataset Generation
 To generate the MIMO-OFDM dataset for vehicular use the following command:
 ```
-python src/create_dataset_grid.py
-python src/create_dataset_vehicular.py
-# Warning: The dataset generated will be large TODO: get the space required
+python src/create_dataset_grid.py  # ~ 320 GB
+python src/create_dataset_vehicular.py # ~ 670 GB
 ```
 The following parameters can be turned inside their respective source code:
 - N, number of columns along antenna array;
