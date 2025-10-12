@@ -1,14 +1,8 @@
 # Digital-Twin-Dataset
 <a href='https://arxiv.org/abs/2505.15519'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a> 
 
-### This Repository is under contruction
-TODO:
-- add the sizes of the resulting matrix
-- Publish the repo
-- Upload the data to external link
-
 ## Release
-- [xx/10/2025] Initial release.
+- [08/10/2025] Initial release.
 ## Contents
 - [Release](#Release)
 - [Contents](#Contents)
@@ -24,12 +18,16 @@ TODO:
 ## Overview
 This repository contains the datasets and processing used in the paper [Exploiting Age of Information in Network Digital Twins for AI-driven Real-Time Link Blockage Detection](https://arxiv.org/abs/2505.15519). The dataset can be downloaded at the following [link](https://drive.google.com/file/d/1XQVwNTf5P8J0O3DxED9SEVFWO36lbSMS/view?usp=sharing). Due to previous agreements with our partners, we are unable to provide the full implementation of the deep learning model and the resulting model weights. Only the data relevant to the paper has been published.
 
+After the download, move the folder `data` to the root of the project repository. The rest of the instructions are in section [ADCMP Dataset Generation](#ADCMP-Dataset-Generation).
+
+The codebase has been developed with Python version 3.10.12.
+
 ## Scenario
 ### Considered urban scenario
-The reference simulation scenario is the urban environment surrounding the Department of Electronics, Information and Bioengineering (DEIB) of Politecnico di Milano. A detailed 2.5D representation of the scenario has been provided by the *Laboratorio di simulazione urbana Fausto Curti* of the Department of Architecture and Urban Studies of Politecnico di Milano. The considered area of interest is represented in the "map_image.png" file.
+The reference simulation scenario is the urban environment surrounding the Department of Electronics, Information, and Bioengineering (DEIB) of Politecnico di Milano. A detailed 2.5D representation of the scenario has been provided by the *Laboratorio di simulazione urbana Fausto Curti* of the Department of Architecture and Urban Studies of Politecnico di Milano. The considered area of interest is represented in the "map_image.png" file.
 
 ### Parked Vehicles
-Based on the above-described buildings scenario, we added a set of parked vehicle mehses along the streets in order to enhance the fidelity with respect to the corresponding real setting. We performed this step by considering a set of satellite images of the scenario and identifying the areas where parked vehicles are usually present. Three vehicle types have been considered for parked vehicles: sedan, hatchback, and truck. Their realizations as specific vehicle meshes are discussed in the Vehicle meshes section above.
+Based on the above-described buildings scenario, we added a set of parked vehicle meshes along the streets in order to enhance the fidelity with respect to the corresponding real setting. We performed this step by considering a set of satellite images of the scenario and identifying the areas where parked vehicles are usually present. Three vehicle types have been considered for parked vehicles: sedan, hatchback, and truck. Their realizations as specific vehicle meshes are discussed in the Vehicle meshes section above.
 
 ### Selected Vehicle Meshes
 The selection of the vehicle meshes is critical, as their level of detail can highly impact the fidelity of the raytracing simulation. We gathered a set of detailed and varied vehicle meshes from the open source [CARLA](https://carla.org) automotive simulator:
@@ -78,9 +76,9 @@ To simulate the mmWave wireless channel in Sionna, the following parameters are 
 - **carrier frequency**: carrier frequency used for simulation;
 - **max paths depth**: max paths depth in terms of number of interactions with the environment;
 - **sampled paths num**: number of sampled paths, referring to the 'fibonacci' method in Sionna; exponential notation has been used;
-- **interaction types**: types of enabled interactions with the environment (among LOS, refraction, diffraction and scattering);
+- **interaction types**: types of enabled interactions with the environment (among LOS, refraction, diffraction, and scattering);
 - **saved paths limi**t: max. number of saved paths for each grid point;
-- **grid resolution**: spatial resolution of the receivers grid in terms of horizontal and vertical distance (in meters) between two contiguous grid points (in grid-based simulations);
+- **grid resolution**: spatial resolution of the receiver's grid in terms of horizontal and vertical distance (in meters) between two contiguous grid points (in grid-based simulations);
 - **grid_height**: height of the simulation grid (in grid-based simulations).
 
 ### SUMO simulation parameters
@@ -104,7 +102,7 @@ RT_s{sim_type}_c{carrier_frequency}_d{max_depth}_p{paths_num}_i{interaction_type
 E.g., “RT_sI2V_c2.8E+10_d5_p1.0E+05_iTTTT_l30_gr5.0x5.0”.
 ```
 Each dataset directory contains two subdirectories:
-- `channel_dataset`, it contains the following files, where the `.pkl` version is serialized within a Pandas DataFrame as Pickle file:
+- `channel_dataset`, it contains the following files, where the `.pkl` version is serialized within a Pandas DataFrame as a Pickle file:
   - `grid_channel_dataset_gr{grid_res}.csv`, where *grid_res* expresses the grid resolution in meters; it contains the channel parameters data generated using Sionna in CSV format;
   - `grid_channel_dataset_gr{grid_res}.yml`, presents the Sionna simulation parameters in YAML format;
   - `grid_positions_grd{grid_res}.csv`, contains the grid points positions for the point ids within the channel dataset in CSV format; unreachable points (i.e., the ones for which no raytracing paths have been generated) have been filtered out;
@@ -151,8 +149,8 @@ Each dataset directory contains two subdirectories:
 - Column 13 - DoD azimuth [degrees] (between -180° and 180°)
 - Column 14 - DoD elevation [degrees] (between 0 and 180)
 - Column 15 - List of interaction types (0: LoS; 1 : Reflected; 2 : Diffracted; 3 : Scattered)
-- Column 16 - List of interactions' positions (x-coordinate [m], y-coordinate [m] and height [m])
-- Column 17 - List of interactions' velocities (x-coordinate [m/s], y-coordinate [m/s] and zcoordinate [m/s])
+- Column 16 - List of interactions' positions (x-coordinate [m], y-coordinate [m], and height [m])
+- Column 17 - List of interactions' velocities (x-coordinate [m/s], y-coordinate [m/s], and z-coordinate [m/s])
 - Column 18 - Blockage flag (true if the LoS path is not present for the point, false otherwise)
 
 ### Vehicular Traffic Dataset
@@ -174,11 +172,10 @@ Each dataset directory contains two subdirectories:
 - Column 16 - SUMO Lane index
 
 ## MIMO-OFDM Dataset Generation
-To generate the MIMO-OFDM dataset or vehicular use the following command:
+To generate the MIMO-OFDM dataset for vehicular use the following command:
 ```
-python src/create_dataset_grid.py
-python src/create_dataset_vehicular.py
-# Warning: The dataset generated will be large TODO: get the space required
+python src/create_dataset_grid.py  # ~ 320 GB
+python src/create_dataset_vehicular.py # ~ 670 GB
 ```
 The following parameters can be turned inside their respective source code:
 - N, number of columns along antenna array;
@@ -190,11 +187,11 @@ The following parameters can be turned inside their respective source code:
 - output_path, path to adcpm output data folder.
 
 ### Format Description
-The data is saved into numpy arrays where the files:
+The data is saved into numpy arrays, where the files:
 - `channel_data.npy`, contains the MIMO-OFDM channel matrix;
 - `blockage_flags.npy`, contains the boolean blockage flag;
 - `positions.npy`, contains the vehicular position if present;
-- `log.txt`, contains the generated files metadatada such as, filename, datatype and array shape.
+- `log.txt`, contains the generated files' metadata, such as filename, datatype, and array shape.
 
 ### Reading the Data
 The data can be read using `np.memmap`:
@@ -203,7 +200,7 @@ channel_matrix_data = np.memmap(path, dtype=np.complex128, mode='r', shape=data_
 blockage_condition = np.memmap(path, dtype=bool, mode='r', shape=data_shape)
 positions = np.memmap(path, dtype=np.float32, mode='r', shape=data_shape)
 ```
-The format is compatibile with pytorch `Dataset` class, an implementation of the `__getitem__` dunder method will load the data one-by-one during the training.
+The format is compatible with PyTorch `Dataset` class, an implementation of the `__getitem__` dunder method will load the data one-by-one during the training.
 ```
 # Pseudo-code example of CustomDataset()
 class CustomDataset
@@ -223,7 +220,7 @@ def __getitem__(self, idx: int):
   target = self.targets[idx]
   return adcpm, target
 ```
-Due to storage restrictions we choose to simulate the awgn noise on the fly over the MIMO-OFDM matrix instead of creating datasets at different noise levels. It is advised to see the seeds for reproducibility due to the random components.
+Due to storage restrictions, we choose to simulate the AWGN noise on the fly over the MIMO-OFDM matrix instead of creating datasets at different noise levels. It is advised to set the seeds for reproducibility due to the random components.
 
 The implementation of the processing from MIMO-OFDM matrix to ADCPM matrix is implemented under `class ADCMP_Manager` in the file `communication_channel_utility.py`
 
@@ -238,7 +235,10 @@ The implementation of the processing from MIMO-OFDM matrix to ADCPM matrix is im
 ```
 
 ## Acknowledgement
-We thank [Laboratorio di simulazione urbana Fausto Curti](https://www.labsimurb.polimi.it/) for providing the digital map. We thank the authors of [SUMO](https://eclipse.dev/sumo/), [Sionna](https://nvlabs.github.io/sionna/), [CARLA](https://carla.org/) for their work.
+We thank [Laboratorio di simulazione urbana Fausto Curti](https://www.labsimurb.polimi.it/) for providing the digital map. 
+
+We thank the authors of [SUMO](https://eclipse.dev/sumo/), [Sionna](https://nvlabs.github.io/sionna/), [CARLA](https://carla.org/) for their work.
+
 ## License
 [![Data License](https://img.shields.io/badge/Data%20License-CC%20By%20NC%204.0-red)](DATA_LICENSE)
 [![Code License](https://img.shields.io/badge/Code%20License-Apache_2.0-yellow.svg)](LICENSE)
