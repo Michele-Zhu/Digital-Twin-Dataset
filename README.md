@@ -1,5 +1,5 @@
 # Digital-Twin-Dataset
-<a href='https://arxiv.org/abs/2505.15519'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a> 
+<a href='https://arxiv.org/abs/2505.15519'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a> <a href='https://www.sciencedirect.com/science/article/pii/S1389128625008217?via%3Dihub'><img src='https://img.shields.io/badge/Paper-Journal-green'>
 
 ## Release
 - [08/10/2025] Initial release.
@@ -226,11 +226,17 @@ The implementation of the processing from MIMO-OFDM matrix to ADCPM matrix is im
 
 ## Citation 
 ```
-@article{DT_AoI_classification,
-  title={{Exploiting Age of Information in Network Digital Twins for AI-driven Real-Time Link Blockage Detection}},
-  author={Michele Zhu and Francesco Linsalata and Silvia Mura and Lorenzo Cazzella and Damiano Badini and Umberto Spagnolini},
-  year={2025},
-  journal={arXiv:}, 
+@article{ZHU2026111855,
+title = {Exploiting age of information in network digital twins for AI-driven real-time link blockage detection},
+journal = {Computer Networks},
+volume = {274},
+pages = {111855},
+year = {2026},
+issn = {1389-1286},
+doi = {https://doi.org/10.1016/j.comnet.2025.111855},
+url = {https://www.sciencedirect.com/science/article/pii/S1389128625008217},
+author = {Michele Zhu and Francesco Linsalata and Silvia Mura and Lorenzo Cazzella and Damiano Badini and Umberto Spagnolini},
+keywords = {Deep learning, Real-time, Machine learning, Network digital twins, 6G, Link blockage detection, LoS/NLoS identification},
 }
 ```
 
