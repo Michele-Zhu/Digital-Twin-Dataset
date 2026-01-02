@@ -10,7 +10,7 @@
 - [Scenario](#Scenario)
 - [Simulation Configuration](#Simulation-Configuration)
 - [Simulation Parameters](#Simulation-Parameters)
-- [ADCMP Dataset Generation](#ADCMP-Dataset-Generation)
+- [MIMO-OFDM Dataset Generation](#MIMO-OFDM-Dataset-Generation)
 - [Citation](#Citation)
 - [Acknowledgement](#Acknowledgement)
 - [License](#License)
@@ -18,7 +18,7 @@
 ## Overview
 This repository contains the datasets and processing used in the paper [Exploiting Age of Information in Network Digital Twins for AI-driven Real-Time Link Blockage Detection](https://arxiv.org/abs/2505.15519). The dataset can be downloaded at the following [link](https://drive.google.com/file/d/1XQVwNTf5P8J0O3DxED9SEVFWO36lbSMS/view?usp=sharing). Due to previous agreements with our partners, we are unable to provide the full implementation of the deep learning model and the resulting model weights. Only the data relevant to the paper has been published.
 
-After the download, move the folder `data` to the root of the project repository. The rest of the instructions are in section [ADCMP Dataset Generation](#ADCMP-Dataset-Generation).
+After the download, move the folder `data` to the root of the project repository. The rest of the instructions are in section [MIMO-OFDM Dataset Generation](#MIMO-OFDM-Dataset-Generation)
 
 The codebase has been developed with Python version 3.10.12.
 
